@@ -44,8 +44,10 @@ const form = document.querySelector("#passwordForm");
 // Gathers all of the input elements from the for
 const formElements = Array.from(form.querySelectorAll("input"));
 
-const testForm = new FormData;
+const testForm = new FormData();
 
+
+// Used to check if type is number or checkbox, as well as catches edge cases
 formElements.forEach( ele => {
   if (ele.type ==="number" ) {
     if (ele.value.length < 1) {
@@ -66,7 +68,25 @@ formElements.forEach( ele => {
   }
 })
 
+
   let new_arr = testForm.entries();
+  let checkChecker = false;
+
+  for (let checks of new_arr) {
+    console.log(checks);
+    console.log(checks[1])
+    if (checks[0] == "checkbox" ) {
+      if (checks[1] == "true") {
+      checkChecker = true;
+      }
+    }
+  }
+
+  if (checkChecker) {
+    alert("Please select at least 1 checkbox");
+    return;
+  }
+  
 createPassword(new_arr, params);
 
 }
