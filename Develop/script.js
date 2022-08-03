@@ -69,20 +69,22 @@ formElements.forEach( ele => {
 })
 
 
+  // Had to define 2 different test from entries.
+  // There seems to be an issue with how entries works and undefined after
+  // iterating through it once
   let new_arr = testForm.entries();
+  let secondArr = testForm.entries();
   let checkChecker = false;
 
-  for (let checks of new_arr) {
-    console.log(checks);
-    console.log(checks[1])
-    if (checks[0] == "checkbox" ) {
+  for (let checks of secondArr) {
+    if (checks[0] != "length" ) {
       if (checks[1] == "true") {
       checkChecker = true;
       }
     }
   }
 
-  if (checkChecker) {
+  if (!checkChecker) {
     alert("Please select at least 1 checkbox");
     return;
   }
