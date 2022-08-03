@@ -2,7 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 
 const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
-const upperCase = ' ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const numeric = '0123456789';
 const specialChar = "@#$&%!~";
 
@@ -32,7 +32,6 @@ const createPassword = (formParams, passParams) => {
   passwordText.innerHTML = returnPassword;
 
 }
-
 
 
 // Write password to the #password input
