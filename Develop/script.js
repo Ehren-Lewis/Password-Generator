@@ -1,4 +1,3 @@
-// Assignment Code
 
 
 // First prompt to explain to the user of what is occuring
@@ -39,7 +38,6 @@ const createPassword = (formDataResults, passParams) => {
   passwordText.innerHTML = returnPassword;
 
 }
-
 
 // Write password to the #password input
 function wrtiePasswordByForm() {
@@ -101,7 +99,6 @@ createPassword(new_arr, params);
 
 // Add event listener to generate button
 generateBtnByForm.addEventListener("click", wrtiePasswordByForm);
-
 
 var generateBtn = document.querySelector("#generate");
 
@@ -166,13 +163,6 @@ const writeRegPass = () => {
   // Used later for checking to see what parameters are set 
   let paramsSet = [['Lowercase',lowerCaseOption], ['Uppercase', upperCaseOption], ["Numeric", numberOption], ["Special Characters", specialCharOption]];
   let presenter = [];
-  
-  // for (let i = 0; i < paramsSet.length; i++) {
-
-  //   if (paramsSet[i] == 'y' || paramsSet[i] == 'Y') {
-  //     presenter.push
-  //   }
-  // }
 
   for (let item of paramsSet) {
     if (item[1] == 'y' || item[1] == 'Y') {
@@ -203,6 +193,5 @@ const writeRegPass = () => {
   passwordText.innerHTML = returnPassword;  
 
 }
-
 
 generateBtn.addEventListener("click", writeRegPass);
