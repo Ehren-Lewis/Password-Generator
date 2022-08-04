@@ -1,7 +1,7 @@
 
 
 // First prompt to explain to the user of what is occuring
-alert('Welcome to the password generator! Either fill out the form or answer through the prompts. If you input the wrong form information, you will have to start over!')
+confirm('Welcome to the password generator! Either fill out the form or answer through the prompts. If you input the wrong form information, you will have to start over!')
 var generateBtnByForm = document.querySelector("#generatebyForm");
 
 // Variable definition of all the cases
@@ -40,7 +40,7 @@ const createPassword = (formDataResults, passParams) => {
 }
 
 // Write password to the #password input
-function wrtiePasswordByForm() {
+function writePasswordByForm() {
   var passwordText = document.querySelector("#password");
 
 // Puts every form element into a variable
@@ -98,7 +98,7 @@ createPassword(new_arr, params);
 }
 
 // Add event listener to generate button
-generateBtnByForm.addEventListener("click", wrtiePasswordByForm);
+generateBtnByForm.addEventListener("click", writePasswordByForm);
 
 var generateBtn = document.querySelector("#generate");
 
@@ -183,7 +183,7 @@ const writeRegPass = () => {
     finalAlert += `${i[0]}: ${i[1]}, `;
   }
 
-  alert(finalAlert)
+  confirm(finalAlert);
 
   for (let i = 0; i < passLength; i++) {
     returnPassword += passwordOptions[Math.floor(Math.random() * passwordOptions.length)];

@@ -29,6 +29,8 @@ The biggest issue is that this is not secure password generator. This random
 method of the math library is built off of a pseudo random number generator, which 
 means that the generator is not truly random. 
 
+There is an issue that if the user presses enter when trying to input values, the page completely refreshes.
+
 I recommend do not use this for actual password, just in case if someone got ahold of the code
 and could see when the random generator starts. The length and the parameters do help create a complex
 password that is harder to crack, but I do not have any experience yet with cyber security and
@@ -55,3 +57,8 @@ link to repository: https://ehren-lewis.github.io/Password-Generator/
 The user can use this project for generating passwor that are between the length
 of 8 to 128 characters. They can also use the generator to choose the which
 parameters they would like.
+
+![Image depicting the site when it first loads](./Develop/images/passGenLanding.png)
+![Image depicting the site when they get the password back](./Develop/images/passGenFormRes.png)
+![Image depicting the site when they use the generate button and get to the final step, the last confirm](./Develop/images/passGenPromptRes.png)
+
