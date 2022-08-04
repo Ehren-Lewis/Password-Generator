@@ -25,22 +25,25 @@
           ></textarea>
         </div>
         <div class="card-footer">
+          <form id="passwordForm">
+            <input type="number" id="length">
+            <label for="length">Password Length</label>
+            <input type="checkbox" id="lowerCase">
+            <label for="lowerCase">Lowercase allowed?</label>
+            <input type="checkbox" id="upperCase">
+            <label for="upperCase">Uppercase allowed?</label>
+            <input type="checkbox" id="numeric">
+            <label for="numeric">Numbers allowed?</label>
+            <input type="checkbox" id="specialChar">
+            <label for="specialChar">Special characters allowed?</label>
+          </form>
           <button id="generate" class="btn">Generate Password</button>
+          <button id="generatebyForm" class="btn">Generate Password by Form</button>
+
         </div>
       </div>
     </div>
-    <form id="passwordForm">
-      <input type="number" id="length">
-      <label for="length">Password Length</label>
-      <input type="checkbox" id="lowerCase">
-      <label for="lowerCase">Lowercase allowed?</label>
-      <input type="checkbox" id="upperCase">
-      <label for="upperCase">Uppercase allowed?</label>
-      <input type="checkbox" id="numeric">
-      <label for="numeric">Numbers allowed?</label>
-      <input type="checkbox" id="specialChar">
-      <label for="specialChar">Special characters allowed?</label>
-    </form>
+
 
     <div style="height: 200px"></div>
 

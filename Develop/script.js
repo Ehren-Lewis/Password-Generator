@@ -1,5 +1,6 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+var generateBtnByForm = document.querySelector("#generatebyForm");
+
 
 const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
 const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -35,7 +36,7 @@ const createPassword = (formParams, passParams) => {
 
 
 // Write password to the #password input
-function writePassword() {
+function wrtiePasswordByForm() {
   var passwordText = document.querySelector("#password");
 
 // Puts every form element into a variable
@@ -90,8 +91,19 @@ formElements.forEach( ele => {
   }
   
 createPassword(new_arr, params);
-
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtnByForm.addEventListener("click", wrtiePasswordByForm);
+
+
+var generateBtn = document.querySelector("#generate");
+
+
+const writeRegPass = () => {
+  var inputLength = prompt("Please input password length greater than 8 and less thatn 128");
+  if
+}
+
+
+generateBtn.addEventListener("click", writeRegPass);
