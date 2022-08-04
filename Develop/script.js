@@ -1,4 +1,6 @@
 // Assignment Code
+
+alert('Welcome to the password generator! Either fill out the form or answer through the prompts. If you input the wrong form information, you will have to start over!')
 var generateBtnByForm = document.querySelector("#generatebyForm");
 
 
@@ -101,8 +103,33 @@ var generateBtn = document.querySelector("#generate");
 
 
 const writeRegPass = () => {
-  var inputLength = prompt("Please input password length greater than 8 and less thatn 128");
-  if
+  let passwordOptions = '';
+  var inputLength = prompt("Please input password length greater than 8 and less than 128");
+  var passLength = parseInt(inputLength);
+  console.log(passLength);
+  if (isNaN(passLength)) {
+    alert('Please input only numbers');
+    return;
+  } else if (passLength > 128 || passLength < 8) {
+    alert("please pick a number between 8 and 128");
+    return;
+  }
+
+  var lowerCaseOption = prompt("Would you like lowercase characters in your password? y/n");
+  if (lowerCaseOption == 'y' || lowerCaseOption == 'Y') {
+    passwordOptions += lowerCase;
+  } else if (lowerCaseOption == 'n' || lowerCaseOption == 'N') {
+    
+  } else {
+    alert('Please input either y or n');
+    return;
+  }
+
+  
+
+
+
+
 }
 
 
