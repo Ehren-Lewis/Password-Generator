@@ -8,7 +8,7 @@ var generateBtnByForm = document.querySelector("#generatebyForm");
 const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
 const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const numeric = '0123456789';
-const specialChar = "@#$&%!~";
+const specialChar = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 
 const params = {lowerCase, upperCase, numeric, specialChar};
 
