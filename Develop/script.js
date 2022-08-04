@@ -162,7 +162,9 @@ const writeRegPass = () => {
     return;
   }
 
-  let paramsSet = [['Lowercase: ',lowerCaseOption], ['Uppercase', upperCaseOption], ["Numeric", numberOption], ["Special Characters", specialCharOption]];
+
+  // Used later for checking to see what parameters are set 
+  let paramsSet = [['Lowercase',lowerCaseOption], ['Uppercase', upperCaseOption], ["Numeric", numberOption], ["Special Characters", specialCharOption]];
   let presenter = [];
   
   // for (let i = 0; i < paramsSet.length; i++) {
@@ -174,16 +176,24 @@ const writeRegPass = () => {
 
   for (let item of paramsSet) {
     if (item[1] == 'y' || item[1] == 'Y') {
-      console.log(item)
       presenter.push(item);
     }
   }
 
   if (presenter.length == 0) {
-    alert("Please select at least 1 checkbox");
+    alert("Please select at least 1 parameter");
     passwordOptions = '';
     return;
   }
+
+  // Shows what paramers they have selected 
+  let finalAlert = 'Parameters selected: ';
+  for (let i of presenter) {
+    console.log(i);
+    finalAlert += `${i[0]}: ${i[1]}, `;
+  }
+
+  alert(finalAlert)
 
   for (let i = 0; i < passLength; i++) {
     returnPassword += passwordOptions[Math.floor(Math.random() * passwordOptions.length)];
