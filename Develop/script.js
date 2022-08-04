@@ -1,9 +1,11 @@
 // Assignment Code
 
+
+// First prompt to explain to the user of what is occuring
 alert('Welcome to the password generator! Either fill out the form or answer through the prompts. If you input the wrong form information, you will have to start over!')
 var generateBtnByForm = document.querySelector("#generatebyForm");
 
-
+// Variable definition of all the cases
 const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
 const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const numeric = '0123456789';
@@ -11,19 +13,21 @@ const specialChar = "@#$&%!~";
 
 const params = {lowerCase, upperCase, numeric, specialChar};
 
-const createPassword = (formParams, passParams) => {
-  var passLength = 0;
-  var returnPassword = '';
-  var pickFromString = '';
 
-  for (var criteria of formParams) {
+// Second function to keep the code cleaner 
+const createPassword = (formDataResults, passParams) => {
+  let passLength = 0;
+  let returnPassword = '';
+  let pickFromString = '';
+
+  for (var criteria of formDataResults) {
     if (criteria[0] == 'length') {
       passLength = Number(criteria[1]);
       continue;
     }
 
     if (criteria[1] == "true") {
-      pickFromString += params[criteria[0]];
+      pickFromString += passParams[criteria[0]];
     }
   }
 
@@ -58,7 +62,7 @@ formElements.forEach( ele => {
       return;
     }
 
-    if (ele.valueAsNumber > 128 || ele.valueAsNumber < 8) {
+    if (ele.value > 128 || ele.value < 8) {
       alert("Password either too long or too short");
       return;
     }
@@ -101,12 +105,12 @@ generateBtnByForm.addEventListener("click", wrtiePasswordByForm);
 
 var generateBtn = document.querySelector("#generate");
 
-
+// Function for using the prompt version button
 const writeRegPass = () => {
+  let returnPassword = '';
   let passwordOptions = '';
   var inputLength = prompt("Please input password length greater than 8 and less than 128");
   var passLength = parseInt(inputLength);
-  console.log(passLength);
   if (isNaN(passLength)) {
     alert('Please input only numbers');
     return;
@@ -125,10 +129,68 @@ const writeRegPass = () => {
     return;
   }
 
+  var upperCaseOption = prompt("Would you like uppercase characters in your password? y/n");
+  if (upperCaseOption == 'y' || upperCaseOption == 'Y') {
+    passwordOptions += upperCase;
+  } else if (upperCaseOption == 'n' || upperCaseOption == 'N') {
+    
+  } else {
+    alert('Please input either y or n');
+    passwordOptions = '';
+    return;
+  }
+
+  var numberOption = prompt("Would you like numbers in your password? y/n");
+  if (numberOption == 'y' || numberOption == 'Y') {
+    passwordOptions += numeric;
+  } else if (numberOption == 'n' || numberOption == 'N') {
+    
+  } else {
+    alert('Please input either y or n');
+    passwordOptions = '';
+    return;
+  }
+
+  var specialCharOption = prompt("Would you like special characters in your password? y/n");
+  if (specialCharOption == 'y' || specialCharOption == 'Y') {
+    passwordOptions += specialChar;
+  } else if (specialCharOption == 'n' || specialCharOption == 'N') {
+
+  } else {
+    alert('Please input either y or n');
+    passwordOptions = '';
+    return;
+  }
+
+  let paramsSet = [['Lowercase: ',lowerCaseOption], ['Uppercase', upperCaseOption], ["Numeric", numberOption], ["Special Characters", specialCharOption]];
+  let presenter = [];
   
+  // for (let i = 0; i < paramsSet.length; i++) {
 
+  //   if (paramsSet[i] == 'y' || paramsSet[i] == 'Y') {
+  //     presenter.push
+  //   }
+  // }
 
+  for (let item of paramsSet) {
+    if (item[1] == 'y' || item[1] == 'Y') {
+      console.log(item)
+      presenter.push(item);
+    }
+  }
 
+  if (presenter.length == 0) {
+    alert("Please select at least 1 checkbox");
+    passwordOptions = '';
+    return;
+  }
+
+  for (let i = 0; i < passLength; i++) {
+    returnPassword += passwordOptions[Math.floor(Math.random() * passwordOptions.length)];
+  }
+
+  var passwordText = document.querySelector("#password");
+  passwordText.innerHTML = returnPassword;  
 
 }
 
