@@ -49,8 +49,8 @@ truly random number generators, or cryptography,
 1. Visit the live site
 2. Copy the files from the developer tools into your own files
 
-link to live site: https://github.com/Ehren-Lewis/Password-Generator
-link to repository: https://ehren-lewis.github.io/Password-Generator/
+link to repository: https://github.com/Ehren-Lewis/Password-Generator
+link to live site: https://ehren-lewis.github.io/Password-Generator/
 
 # Usage
 
