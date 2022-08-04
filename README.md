@@ -55,8 +55,3 @@ link to repository: https://ehren-lewis.github.io/Password-Generator/
 The user can use this project for generating passwor that are between the length
 of 8 to 128 characters. They can also use the generator to choose the which
 parameters they would like.
-
-
-# Contributors
-
-Trilogy Education Services
