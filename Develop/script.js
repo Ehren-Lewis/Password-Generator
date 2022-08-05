@@ -116,6 +116,7 @@ const writeRegPass = () => {
     return;
   }
 
+  // Mass prompt definition and logic for the prompt password
   var lowerCaseOption = prompt("Would you like lowercase characters in your password? y/n");
   if (lowerCaseOption == 'y' || lowerCaseOption == 'Y') {
     passwordOptions += lowerCase;
@@ -161,6 +162,7 @@ const writeRegPass = () => {
 
 
   // Used later for checking to see what parameters are set 
+  // Stored in an array for easier traversal 
   let paramsSet = [['Lowercase',lowerCaseOption], ['Uppercase', upperCaseOption], ["Numeric", numberOption], ["Special Characters", specialCharOption]];
   let presenter = [];
 
